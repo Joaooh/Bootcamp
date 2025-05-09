@@ -8,8 +8,9 @@ def multiplicacao(x, y):
     return x * y
 
 def divisao(x, y):
-    if y == 0:
-        return "Erro: divisão por zero não é permitida."
+    while y == 0:
+        print("Erro: divisão por zero não é permitida.")
+        y = float(input("Digite o segundo número: "))
     return x / y
 
 def formatar(valor):
@@ -49,12 +50,15 @@ while True:
         if operacao == '+':
             resultado = formatar(adicao(num1, num2))
             print(f"{num1} + {num2} = {resultado}")
+
         elif operacao == '-':
             resultado = formatar(subtracao(num1, num2))
             print(f"{num1} - {num2} = {resultado}")
+
         elif operacao == '*':
             resultado = formatar(multiplicacao(num1, num2))
             print(f"{num1} * {num2} = {resultado}")
+
         elif operacao == '/':
             resultado = divisao(num1, num2)
             print(f"{num1} / {num2} = {formatar(resultado)}")
@@ -64,8 +68,10 @@ while True:
             continuar = input("Quer fazer outro cálculo? (s/n): ").strip().lower()
             if continuar in ("sim", "s"):
                 break
+
             elif continuar in ("não", "nao", "n"):
                 print("\nFinalizando a calculadora.")
                 exit()
+                
             else:
                 print("Erro: Responda com s/n ou sim/não'.")

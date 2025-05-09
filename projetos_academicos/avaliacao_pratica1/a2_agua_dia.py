@@ -1,8 +1,8 @@
 def linhas():
-    print("---------------------------------------------")
+    print("-" * 45)
 
 linhas()
-print("Calculadora de quanta água deve tomar por dia")
+print("Cálculo de quanta água tomar por dia".center(45))
 linhas()
 
 while True:
@@ -16,4 +16,4 @@ while True:
         print("Insira um número válido (exemplo: 62.5).")
 
 dose_ideal = massa * 0.03
-print(f"Sua dose de água ideal por dia é de {dose_ideal:.2f}L.")
+print(f"\nSua dose de água ideal por dia é de {dose_ideal:.2f}L.")

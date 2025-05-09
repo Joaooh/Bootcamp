@@ -1,12 +1,12 @@
 def linhas():
-    print("----------------------------------------")
+    print("-" * 40)
 
 linhas()
-print("Cálculo do peso ideal com base na altura")
+print("Cálculo do peso ideal com base na altura".center(40))
 linhas()
 
 sexo = input("Digite seu sexo (M/F): ").strip().upper()
-while sexo not in "MF":
+while sexo[:1] != "M" and sexo[:1] != "F":
     print("Opção inválida. Digite M para masculino ou F para feminino.")
     sexo = input("Digite seu sexo (M/F): ").strip().upper()
 

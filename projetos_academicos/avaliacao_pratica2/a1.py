@@ -2,13 +2,13 @@ def linhas():
     print("-" * 44)
 
 linhas()
-print("Ordenador crescente de dois números inteiros")
+print("Ordenador crescente de dois números inteiros".center(44))
 linhas()
 
-def obter_numero(mensagem: str) -> int:
+def obter_numero(numero) -> int:
     while True:
         try:
-            return int(input(mensagem))
+            return int(input(numero))
         except ValueError:
             print("Erro. Digite um número inteiro válido.")
 

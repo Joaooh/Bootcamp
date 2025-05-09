@@ -2,13 +2,13 @@ def linhas():
     print("-" * 48)
 
 linhas()
-print("Maior número entre três valores (sem operadores)")
+print("Maior número entre três valores (sem operadores)".center(48))
 linhas()
 
-def obter_numero(mensagem: str) -> int:
+def obter_numero(valor) -> int:
     while True:
         try:
-            return int(input(mensagem))
+            return int(input(valor))
         except ValueError:
             print("Erro. Digite um número inteiro válido.")
 
