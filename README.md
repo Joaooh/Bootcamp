@@ -1,6 +1,6 @@
 # Bootcamp I - Entrega Intermediária
 
-Esse repositório é dividido em ``projetos_academicos`` e ``projetos_pessoais``, contendo códigos que fiz durante o primeiro semestre de Ciência da Computação.
+Esse repositório é dividido em `projetos_academicos` e `projetos_pessoais`, contendo códigos que fiz durante o primeiro semestre de Ciência da Computação.
 
 ## Organização
 
@@ -15,4 +15,4 @@ projetos_academicos/
 └── avaliacao_pratica5/
 ```
 
-A pasta ``projetos_pessoais`` contém códigos que desenvolvi sem divisão por subpastas. O conhecimento aplicado neles foi adquirido por meio de monitorias e fontes externas à faculdade.
+A pasta `projetos_pessoais` contém códigos que desenvolvi, com apenas uma subpasta. O conhecimento aplicado neles foi adquirido por meio de monitorias e fontes externas à faculdade.
