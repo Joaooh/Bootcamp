@@ -1,51 +1,57 @@
-def linhas():
+def linha():
     print("-" * 52)
 
-linhas()
-print("Verificador de Triângulos".center(52))
-linhas()
+def titulo(texto):
+    linha()
+    print(texto.center(52))
+    linha()
 
-def forma_triangulo(lado_a, lado_b, lado_c) -> float:
-    return (
-        lado_a > 0 and lado_b > 0 and lado_c > 0
-        and (lado_a + lado_b > lado_c and lado_a + lado_c > lado_b and lado_b + lado_c > lado_a)
-    )
-
-def tipo_triangulo(lado_a: float, lado_b: float, lado_c: float) -> str:
-    if lado_a == lado_b == lado_c:
-        return "É um triângulo equilátero (todos os lados iguais)"
-    elif lado_a == lado_b or lado_a == lado_c or lado_b == lado_c:
-        return "É um triângulo isósceles (dois lados iguais)"
-    else:
-        return "É um triângulo escaleno (todos os lados diferentes)"
-
-def obter_lado(valor):
+def obter_lado(nome):
     while True:
         try:
-            return float(input(valor))
+            valor = float(input(f"Digite o lado {nome}: "))
+            if valor <= 0:
+                print("Erro. O lado deve ser maior que zero.")
+            else:
+                return valor
         except ValueError:
-            print("Erro. Tente novamente com um número válido.")
+            print("Erro. Insira um número válido.")
 
-def lados():
+def forma_triangulo(a, b, c):
+    return a + b > c and a + c > b and b + c > a
+
+def tipo_triangulo(a, b, c):
+    if a == b == c:
+        return "Triângulo equilátero (todos os lados iguais)"
+    elif a == b or a == c or b == c:
+        return "Triângulo isósceles (dois lados iguais)"
+    else:
+        return "Triângulo escaleno (todos os lados diferentes)"
+
+def verificar_triangulo():
     while True:
-        lado_a = obter_lado("Digite o primeiro lado: ")
-        lado_b = obter_lado("Digite o segundo lado: ")
-        lado_c = obter_lado("Digite o terceiro lado: ")
+        titulo("Verificador de Triângulos")
 
-        linhas()
-        if forma_triangulo(lado_a, lado_b, lado_c):
-            print("Os valores inseridos formam um triângulo válido!")
-            print(tipo_triangulo(lado_a, lado_b, lado_c))
+        a = obter_lado("A")
+        b = obter_lado("B")
+        c = obter_lado("C")
+
+        linha()
+        if forma_triangulo(a, b, c):
+            print("Os valores formam um triângulo válido!")
+            print(tipo_triangulo(a, b, c))
         else:
-            print("Os valores inseridos não formam um triângulo válido.")
-        linhas()
+            print("Os valores **não** formam um triângulo válido.")
+        linha()
 
-        continuar = input("\nDeseja verificar outro triângulo? (S/N): ").strip().lower()
-        while continuar[:1] != "s" and continuar[:1] != "n":
-            print("Opção inválida. Digite S ou N.")
-            continuar = input("\nDeseja verificar outro triângulo? (S/N): ").strip().lower()
-        if continuar == "n":
-            print("Finalizando o programa.")
-            break
+        while True:
+            opcao = input("\nDeseja verificar outro triângulo? (S/N): ").strip().lower()
+            if opcao == "s":
+                break
+            elif opcao == "n":
+                print("\nPrograma finalizado.")
+                return
+            else:
+                print("Opção inválida. Digite S ou N.")
 
-lados()
+verificar_triangulo()
